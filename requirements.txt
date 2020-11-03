@@ -1,0 +1,6 @@
+Flask
+Flask-RESTful
+sqlalchemy
+psycopg2
+shortuuid
+gunicorn
