@@ -12,6 +12,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from QuotesAPI.quotes_db.quotes_sql import QuotesDB
+from QuotesAPI.database.quotes_sql import QuotesDB
 
 quot = QuotesDB()

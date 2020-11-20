@@ -15,6 +15,7 @@
 import os
 
 DB_URI = os.getenv("DATABASE_URL")
+ACCESS_KEY = os.getenv("ACESS_KEY")
 
-__version__ = "1.0"
+__version__ = "1.1"
 __author__ = "Stɑrry Shivɑm <starry369126@outlook.com>"

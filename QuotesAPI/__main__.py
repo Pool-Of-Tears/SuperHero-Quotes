@@ -24,7 +24,8 @@ for some nice API but didn't found one so decided to make my own, Cause why not!
 
 from flask import Flask
 from flask_restful import Api, Resource, abort, reqparse
-from QuotesAPI.quotes_db import quot
+from QuotesAPI.database import quot
+from QuotesAPI import ACCESS_KEY
 
 app = Flask(__name__)
 api = Api(app)
@@ -53,7 +54,7 @@ class QuoteByID(Resource):
         abort(404, message="Can't find any quote for this id.")
 
 
-# req parser for /grab endpoint
+# request parser for /grab endpoint.
 grab_parser = reqparse.RequestParser()
 grab_parser.add_argument(
     "banner",
@@ -91,9 +92,57 @@ class GrabCategory(Resource):
         )
 
 
-api.add_resource(GetRandom, "/random")
+# request parser for /insert endpoint.
+insert_parser = reqparse.RequestParser()
+insert_parser.add_argument(
+    "access_key",
+    type=str,
+    required=True,
+    help="Acess key is required to insert quote in database",
+)
+insert_parser.add_argument(
+    "char",
+    type=str,
+    required=True,
+    help="Charater / author of quote is required!",
+)
+insert_parser.add_argument(
+    "quote", type=str, required=True, help="Quote to insert is required!"
+)
+insert_parser.add_argument(
+    "table",
+    type=str,
+    required=True,
+    help="Table name to insert quotes into is required!",
+)
+
+
+class InsertQuote(Resource):
+    """
+    Inserts quote in database availabe
+    to devlopers only!
+    """
+
+    @staticmethod
+    def post():
+        args = insert_parser.parse_args()
+
+        if args["access_key"] != ACCESS_KEY:
+            abort(400, message="Invalid acess key!")
+
+        if args["table"] in {"mcu", "dcu"}:
+            quot.insert(
+                char=args["char"], quote=args["quote"], table=args["table"]
+            )
+            return {"message": "Successfully inserted"}, 200
+
+        abort(400, message="table parameter must be either 'dcu' or 'mcu'")
+
+
+api.add_resource(GetRandom, "/random", endpoint="random")
 api.add_resource(GrabCategory, "/grab", endpoint="grab")
 api.add_resource(QuoteByID, "/quoteId/<string:quote_id>")
+api.add_resource(InsertQuote, "/insert", endpoint="insert")
 
 
 if __name__ == "__main__":
