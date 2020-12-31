@@ -134,7 +134,7 @@ class InsertQuote(Resource):
             quot.insert(
                 char=args["char"], quote=args["quote"], table=args["table"]
             )
-            return {"message": "Successfully inserted"}, 200
+            return {"message": "Successfully inserted"}, 201
 
         abort(400, message="table parameter must be either 'dcu' or 'mcu'")
 

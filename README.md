@@ -81,7 +81,7 @@ will return two quotes from Marvel's collection.
 </details>
 
 ## Collection updates:
-Quotes collection will be updated frequently from new movie releases from both Marvel & DCU or whenever i have some great findings!
+Quotes collection will be updated frequently from new movie releases from both Marvel & DCU or whenever i have some great findings! (Please see CHANGES.md file to stay in loop with new additions.)
 
 ## Contribute
 
