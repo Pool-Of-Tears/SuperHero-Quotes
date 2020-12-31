@@ -13,6 +13,9 @@
 
 ## Endpoints:
 
+<details>
+  <summary>Click here: </summary>
+
 - `/grab?banner=mcu` or `/grab?banner=dcu`: Returns 10 random quote for the given banner. You can also fetch more than 10 quote at a time by passing `size` parameter, like: `/grab?banner=mcu&size=2`
 will return two quotes from Marvel's collection.
 
@@ -75,6 +78,7 @@ will return two quotes from Marvel's collection.
     }
 }
 ```
+</details>
 
 ## Collection updates:
 Quotes collection will be updated frequently from new movie releases from both Marvel & DCU or whenever i have some great findings!
