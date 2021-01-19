@@ -13,7 +13,8 @@
 # SOFTWARE.
 
 
-import shortuuid, random
+import shortuuid
+import random
 
 from threading import RLock
 from QuotesAPI import DB_URI
