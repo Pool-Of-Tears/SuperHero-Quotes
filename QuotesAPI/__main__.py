@@ -138,7 +138,7 @@ class InsertQuote(Resource):
 
         abort(400, message="table parameter must be either 'dcu' or 'mcu'")
 
-        
+
 @app.route("/")
 def index():
     return render_template("index.html")
