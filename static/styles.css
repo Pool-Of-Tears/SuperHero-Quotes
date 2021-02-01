@@ -1,0 +1,131 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, .made_by {
+    text-align: center;
+}
+
+.top_pic {
+    max-width: 60%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.pics {
+    text-align: center;
+}
+
+.items {
+    max-width: 140%;
+}
+
+/* Awesome button by https://github.com/Anonsatyam */
+.button {
+    color: #FF0000;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 20px;
+    background: #FFFFFF;;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 1s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+}
+.button:after, .button:before {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border: 0px solid #FFF;
+    transition: all 1s;
+}
+.button:after {
+    top: -1px;
+    left: -1px;
+    border-top: 5px solid #FF0000;
+    border-left: 5px solid #FF0000;
+}
+.button:before {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 5px solid #FF0000;
+    border-right: 5px solid #FF0000;
+}
+.button:hover {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.button:hover:before, .button:hover:after {
+    width: 102%;
+    height: 102%;
+}
+.container_button {
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.code {
+    background-color: #F6F8FA;
+    font-family: 'Space Mono', monospace;
+    border-radius: 5px;
+}
+.code_para {
+    overflow: auto;
+}
+.code_single {
+    padding-top: 3px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+}
+
+ul {
+    text-align: center;
+    list-style-position: inside;
+}
+li {
+    line-height: 170%;
+}
+
+.endpoint_container {
+    padding-right: 150px;
+    padding-left: 150px;
+}
+
+.footer {
+    align-items: center;
+    margin: auto;
+}
+.made_by {
+    padding-top: 20px;
+    size: 10px;
+}
+
+/* For mobiles */
+@media only screen and (max-width: 600px) {
+    .top_pic {
+        max-width: 100%;
+    }
+
+    .endpoint_container {
+        padding: 0px;
+    }
+
+    ul {
+        padding-inline-start: 0px;
+    }
+}

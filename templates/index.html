@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <h1>SuperHero Quotes</h1>
+        <img src="/static/poster.jpg" alt="MCU & DC Picture" class="top_pic">
+        <h2>An API consisting huge collection of handpicked Marvel & DC SuperHeros and Supervillains quotes!</h2>
+
+        <div class="pics">
+            <img src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg" alt="Python" class="items">
+            <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="Licence" class="items">
+            <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PR Welcome" class="items">
+            <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code Style" class="items">
+        </div>
+
+        <div class="container_button">
+            <a href="https://github.com/Pool-Of-Tears/SuperHero-Quotes" target="_blank"><span class="button">Source Code</span></a>
+            <a href="https://github.com/Pool-Of-Tears/SuperHero-Quotes/blob/main/CHANGES.md" target="_blank"><span class="button">Collection Updates</span></a>
+        </div>
+
+        <div class="endpoint_container">
+            <h3>Endpoints</h3>
+            <ul>
+                <li><span class="code code_single">/grab?banner=mcu</span> or <span class="code code_single">/grab?banner=dcu:</span> Returns 10 random quote for the given banner. You can also fetch more than 10 quote at a time by passing size parameter, like: <span class="code code_single">/grab?banner=mcu&size=2</span> will return two quotes from Marvel's collection.</li>
+                <li>Note: Max size limit is <span class="code code_single">50</span> (fifty)</li>
+            </ul>
+            <h4>Example Response:</h4>
+            <div>
+                <pre class="code code_para">
+
+    {
+        "StatusCode": 200,
+        "Banner": "Marvel Cinematic Universe (MCU)",
+        "TotalQuotes": 2,
+        "Items": [
+            {
+                "id": "6SYjJebRR8fCF9SnvFZBKQ",
+                "data": {
+                    "author": "Iron Man",
+                    "quote": "You know what, give me a break, Steve. I just got hit in the head with a Hulk."
+                }
+            },
+            {
+                "id": "2cquLZiJsUbg5jtQrdwLkM",
+                "data": {
+                    "author": "Thanos",
+                    "quote": "You have my respect, stark. When I'm done, half of humanity will still be alive. I hope they remember you."
+                }
+            }
+        ]
+    }
+                </pre>
+            </div>
+
+            <ul>
+                <li><span class="code code_single">/random</span>: Will return single randomly chosen quote from either Marvel or DC collection.</li>
+            </ul>
+            <div>
+                <pre class="code code_para">
+
+    {
+        "StatusCode": 200,
+        "Banner": "DC Universe (DCU)",
+        "Stuff": {
+            "id": "c4ZuUeSUzjGiCEVUmsrYWN",
+            "data": {
+                "author": "Wonder Woman",
+                "quote": "Death is necessary. It is part of life, and if we say life is a blessing, we must say that death is a blessing, as well."
+            }
+        }
+    }
+                </pre>
+            </div>
+
+            <ul>
+                <li><span class="code code_single">/quoteId/&lt;quote_id&gt;</span>: Will return single randomly chosen quote from either Marvel or DC collection.</li>
+            </ul>
+            <div>
+                <pre class="code code_para">
+
+    {
+        "StatusCode": 200,
+        "Stuff": {
+            "id": "k3fhzAKsvCeuFhXPHPQcnT",
+            "data": {
+                "author": "The Joker",
+                "quote": "The pen, is truly mightier than the sword!"
+            }
+        }
+    }
+                </pre>
+            </div>
+        </div>
+            <p class="made_by">Made with &#10084;&#65039; by <a href="https://www.github.com/imudayveer" target="_blank">imudayveer</a> at Kontol Labs.</p>
+    </body>
+</html>

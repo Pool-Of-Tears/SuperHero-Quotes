@@ -27,7 +27,7 @@ from flask_restful import Api, Resource, abort, reqparse
 from QuotesAPI.database import quot
 from QuotesAPI import ACCESS_KEY
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="../templates")
 api = Api(app)
 
 
@@ -138,6 +138,9 @@ class InsertQuote(Resource):
 
         abort(400, message="table parameter must be either 'dcu' or 'mcu'")
 
+@app.route("/")
+def index():
+    return render_template("index.html")
 
 api.add_resource(GetRandom, "/random", endpoint="random")
 api.add_resource(GrabCategory, "/grab", endpoint="grab")
