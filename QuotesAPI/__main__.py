@@ -22,7 +22,7 @@ for some nice API but didn't found one so decided to make my own, Cause why not!
 """
 
 
-from flask import Flask
+from flask import Flask, render_template
 from flask_restful import Api, Resource, abort, reqparse
 from QuotesAPI.database import quot
 from QuotesAPI import ACCESS_KEY
