@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Hack for herokowowo
 from QuotesAPI.__main__ import app
 

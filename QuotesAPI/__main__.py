@@ -27,7 +27,9 @@ from flask_restful import Api, Resource, abort, reqparse
 from QuotesAPI.database import quot
 from QuotesAPI import ACCESS_KEY
 
-app = Flask(__name__, template_folder="../templates", static_folder="../static")
+app = Flask(
+    __name__, template_folder="../templates", static_folder="../static"
+)
 api = Api(app)
 
 

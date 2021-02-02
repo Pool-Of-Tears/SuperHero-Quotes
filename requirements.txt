@@ -1,6 +1,6 @@
 Flask
 Flask-RESTful
-sqlalchemy
+gunicorn
 psycopg2
 shortuuid
-gunicorn
+sqlalchemy
