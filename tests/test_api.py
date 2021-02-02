@@ -48,6 +48,7 @@ def test_default_grab_endpoint_size():
         res = r.get(f"{BASE_URL}/grab?banner={b}")
         # by default it should return 10 quotes
         assert res.json()["TotalQuotes"] == 10
+        assert len(res.json()["Items"]) == 10
 
 
 def test_invalid_grab_banner():
