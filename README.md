@@ -1,7 +1,7 @@
 <p align="center"><img src="/.github/poster.jpg"></p>
 
 <h1 align="center">SuperHero Quotes</h1>
-<p align="center">An api consisting huge collection of handpicked Marvel & DC SuperHeros and Supervillains quotes!:zap:</p>
+<p align="center">An API consisting huge collection of handpicked Marvel & DC SuperHeros and Supervillains quotes!:zap:</p>
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -81,7 +81,7 @@ will return two quotes from Marvel's collection.
 </details>
 
 ## Collection updates:
-Quotes collection will be updated frequently from new movie releases from both Marvel & DCU or whenever i have some great findings! (Please see CHANGES.md file to stay in loop with new additions.)
+Quotes collection gets updated frequently from new movie releases by both Marvel & DCU or whenever i have some great findings! Please checkout [CHANGES.md](https://github.com/starry69/SuperHero-Quotes/blob/main/CHANGES.md) file to stay in loop with new additions :)
 
 ## Contribute
 
