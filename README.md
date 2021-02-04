@@ -7,6 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![Python application](https://github.com/Pool-Of-Tears/SuperHero-Quotes/workflows/Python%20application/badge.svg)
 
 ## Base API URL:
 `https://superhero-quotes.herokuapp.com/`
