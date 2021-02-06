@@ -24,13 +24,14 @@ for some nice API but didn't found one so decided to make my own, Cause why not!
 
 from flask import Flask, render_template
 from flask_restful import Api, Resource, abort, reqparse
-from QuotesAPI.database import quot
+from QuotesAPI.database.quotes_sql import SuperHeroQuotesDB
 from QuotesAPI import ACCESS_KEY
 
 app = Flask(
     __name__, template_folder="../templates", static_folder="../static"
 )
 api = Api(app)
+quot = SuperHeroQuotesDB()
 
 
 class GetRandom(Resource):
@@ -143,9 +144,11 @@ class InsertQuote(Resource):
 
 @app.route("/")
 def index():
+    """Renders homepage."""
     return render_template("index.html")
 
 
+# add API resources
 api.add_resource(GetRandom, "/random", endpoint="random")
 api.add_resource(GrabCategory, "/grab", endpoint="grab")
 api.add_resource(QuoteByID, "/quoteId/<string:quote_id>")

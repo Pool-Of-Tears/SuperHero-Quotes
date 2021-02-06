@@ -59,6 +59,18 @@ def test_invalid_grab_banner():
     assert res.json()["message"].startswith("Not found")
 
 
+def test_maxsize_limit():
+    # make request to API by passing more 99 in size parameter
+    banners = ["dcu", "mcu"]
+    size = 69
+    err_msg = "You can only fetch max 50 quotes at time!"
+    # make request for both banners
+    for b in banners:
+        res = r.get(f"{BASE_URL}/grab?banner={b}&size={size}")
+        assert res.status_code == 400  # bad request
+        assert res.json()["message"] == err_msg
+
+
 def test_random_endpoint():
     # make request to /random endpoint.
     res = r.get(f"{BASE_URL}/random")
@@ -69,6 +81,7 @@ def test_random_endpoint():
         "DC Universe (DCU)",
         "Marvel Cinematic Universe (MCU)",
     }
+    assert json_data.get("Stuff", {}).get("data") is not None
 
 
 def test_quoteid_endpoint():

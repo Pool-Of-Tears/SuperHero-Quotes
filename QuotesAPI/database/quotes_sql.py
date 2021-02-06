@@ -25,15 +25,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, scoped_session
 
 
-def start_session() -> scoped_session:
-    engine = create_engine(DB_URI, client_encoding="utf8")
-    Base.metadata.bind = engine
-    Base.metadata.create_all(engine)
-    return scoped_session(sessionmaker(bind=engine, autoflush=False))
-
-
+# SQLAlchemy declarative base obj
 Base = declarative_base()
-_Session = start_session()
 
 
 class MCUQuotes(Base):
@@ -66,21 +59,50 @@ class DCUQuotes(Base):
         return f"id={self.ud}, character={self.character}, quote={self.quote}"
 
 
-MCUQuotes.__table__.create(checkfirst=True)
-DCUQuotes.__table__.create(checkfirst=True)
-
-
-class QuotesDB:
+class SuperHeroQuotesDB:
     """
-    Holds all methods to get and insert quotes from DB.
+    The main database class, which does the following:
+
+    * creates table for SQL database if not exists.
+    * starts database connection using scoped session.
+    * fetches and loads quotes from database into memory.
+    * holds all methods to fetch/insert/delete quotes.
+
     """
 
     def __init__(self):
         self._dcu_quotes = []
         self._mcu_quotes = []
-        self._session = _Session
+        self._session = self._start_session()
         self._lock = RLock()
         self.__reload_quotes()  # load quotes in memory
+
+    @property
+    def total(self):
+        """
+        Returns total number of quotes in database.
+        """
+        return len(self._dcu_quotes + self._mcu_quotes)
+
+    @property
+    def all(self):
+        """
+        Returns list of all quotes from database.
+        """
+        return self._mcu_quotes + self._dcu_quotes
+
+    @staticmethod
+    def _start_session() -> scoped_session:
+        """Creates SQLAlchemy scoped session."""
+        engine = create_engine(DB_URI, client_encoding="utf8")
+        Base.metadata.bind = engine
+        Base.metadata.create_all(engine)
+
+        # create database tables if not exist already
+        MCUQuotes.__table__.create(checkfirst=True)
+        DCUQuotes.__table__.create(checkfirst=True)
+
+        return scoped_session(sessionmaker(bind=engine, autoflush=False))
 
     def get_quotes(self, cat, size=10):
         """Get quotes for category with size limit."""
@@ -188,3 +210,6 @@ class QuotesDB:
                 )
         finally:
             self._session.close()
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}(total={self.total})"
