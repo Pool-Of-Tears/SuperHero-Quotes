@@ -141,6 +141,7 @@ class SuperHeroQuotesDB:
         """Get specific quote with it's id"""
 
         all_quotes = self._mcu_quotes + self._dcu_quotes
+        # skipcq: PTC-W0063
         quote = next((item for item in all_quotes if item["id"] == qid), None)
         if quote:
             return {"StatusCode": 200, "Stuff": quote}

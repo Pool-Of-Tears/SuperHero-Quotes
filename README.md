@@ -1,4 +1,4 @@
-<p align="center"><img src="/.github/poster.jpg"></p>
+<p align="center"><img src="/.github/icon.jpg"></p>
 
 <h1 align="center">SuperHero Quotes</h1>
 <p align="center">An API consisting huge collection of handpicked Marvel & DC SuperHeros and Supervillains quotes!:zap:</p>
