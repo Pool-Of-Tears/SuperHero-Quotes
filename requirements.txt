@@ -1,6 +1,7 @@
 Flask
+flask-cors
 Flask-RESTful
 gunicorn
-psycopg2
+psycopg2-binary
 shortuuid
 sqlalchemy
