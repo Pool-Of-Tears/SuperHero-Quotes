@@ -25,8 +25,9 @@
 Restful Superhero QuoteAPI written in python3 with Flask, Falsk-RESTful
 and SQLAlchemy database, by (www.github.com/starry69) as fun project.
 
-Also since i actually needed a good MCU and DCU Quotes collection and was looking
-for some nice API but didn't found one so decided to make my own, Cause why not!
+Also since i actually needed a good MCU and DCU Quotes collection
+and was looking for some nice API but didn't found one so decided
+to make my own, Cause why not!
 """
 
 
@@ -101,7 +102,7 @@ class GrabCategory(Resource):
 
         abort(
             404,
-            message="Not found: Invalid banner provided!: Valid banners=['mcu', 'dcu']",
+            message="Not found: Invalid banner provided!",
         )
 
 
