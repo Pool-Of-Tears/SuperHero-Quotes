@@ -1,7 +1,6 @@
-<p align="center"><img src="/.github/icon.jpg"></p>
+<p align="center"><img src="https://telegra.ph/file/a0d23ed9a3fd3012ef5c2.jpg"></p>
 
-<h1 align="center">SuperHero Quotes</h1>
-<p align="center">An API consisting huge collection of handpicked Marvel & DC SuperHeros and Supervillains quotes!:zap:</p>
+**”It’s not who I am underneath, but what I do that defines me.” – Batman**
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -9,13 +8,16 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![API status](https://github.com/Pool-Of-Tears/SuperHero-Quotes/actions/workflows/api_status.yml/badge.svg)](https://github.com/Pool-Of-Tears/SuperHero-Quotes/actions/workflows/api_status.yml)
 
-## Base API URL:
-`https://superhero-quotes.herokuapp.com/`
+<p align="center"><b>An API consisting huge collection of handpicked Marvel & DC SuperHeros and Supervillains quotes!:zap:</b></p>
 
-## Endpoints:
+**Base API URL**
+```
+https://superhero-quotes.herokuapp.com/
+```
 
+**Click below to view endpoints**
 <details>
-  <summary>Click here: </summary>
+  <summary>reveal endpoints</summary>
 
 - `/grab?banner=mcu` or `/grab?banner=dcu`: Returns 10 random quote for the given banner. You can also fetch more than 10 quote at a time by passing `size` parameter, like: `/grab?banner=mcu&size=2`
 will return two quotes from Marvel's collection.
